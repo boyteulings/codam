@@ -1,0 +1,5 @@
+Credentials cache: API:195128DE-2581-4A52-9BF9-78E17B53F083
+        Principal: bteuling@CODAM.NL
+
+  Issued                Expires               Principal
+Jul  8 11:04:12 2021  Jul 15 11:04:12 2021  krbtgt/CODAM.NL@CODAM.NL
