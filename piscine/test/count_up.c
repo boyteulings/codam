@@ -1,17 +1,18 @@
 #include <unistd.h>
 
+int	ft_putchar(int);
+
 int main(void)
 {
 	int	n;
-	int	*ptr;
-
+	char	c;
+	c = n;
 	n = 1;
 
-	while(x <= 5)
+	while(n <= 5)
 	{
-		write(1, "The current value of x is: &d\n", 30);
-		sleep(1);
-		++x;
+		ft_putchar(n);
+		n++;
 	}
 
 	return 0;
