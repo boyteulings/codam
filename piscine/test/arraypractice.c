@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	char	str[] = "test";
-	write(1, &str, 4);
+	char	str[] = "0123";
+	write(1, &str[2], 1);
 	return (0);
 }
