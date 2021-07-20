@@ -10,10 +10,11 @@ void	print(int x, int y, int z)
 	ft_putchar(x + '0');
 	ft_putchar(y + '0');
 	ft_putchar(z + '0');
-	ft_putchar(',');
-	ft_putchar(' ');
-	if (x == 7 && y == 8 && z == 9)
-		ft_putchar('\n');
+	if (x < 7)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
 }
 
 void	ft_print_comb(void)
@@ -40,10 +41,4 @@ void	ft_print_comb(void)
 		}
 		x++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb();
-	return (0);
 }

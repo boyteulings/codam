@@ -2,8 +2,9 @@
 
 void	ft_putstr(char *str)
 {
-	while (
-
-	else
-			
+	while (*str != '\0')
+	{
+		write(1, &str[0], 1);
+		str++;
+	}
 }
