@@ -1,9 +1,9 @@
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	spos;
 
 	spos = 0;
-	while (s1[spos] != '\0')
+	while (s1[spos] != '\0' && spos < n)
 	{
 		spos++;
 		if (*s1 == 0)
