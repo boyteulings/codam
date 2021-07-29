@@ -17,14 +17,17 @@ int	main(int argc, char *argv[])
 {
 	int	i;
 
-	i = 1;
+	i = argc - 1;
 	if (argc > 1)
 	{
 		while (argv[i] > 0)
 		{
 			write(1, argv[i], ft_strlen(argv[i]));
 			write(1, "\n", 1);
-			i++;
+			if (i > 1)
+				i--;
+			else
+				return (0);
 		}
 	}
 	else
