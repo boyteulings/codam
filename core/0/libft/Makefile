@@ -19,8 +19,7 @@ $(NAME): all
 
 clean:
 	@tput setaf 1; echo "Cleaning up..."; tput sgr0 
-	@rm -f ft_*.o
-	@rm -f libft.a
+	@rm -f ft_*.o libft.a
 	@tput setaf 2; echo "Done!"; tput sgr0
 
 fclean: clean
