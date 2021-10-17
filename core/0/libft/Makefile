@@ -19,9 +19,12 @@ $(NAME): all
 
 clean:
 	@tput setaf 1; echo "Cleaning up..."; tput sgr0 
-	@rm -f ft_*.o libft.a
+	@rm -f ft_*.o
 	@tput setaf 2; echo "Done!"; tput sgr0
 
-fclean: clean
+fclean:
+	@tput setaf 1; echo "Cleaning up obj and archive files..."; tput sgr0
+	@rm -f $(NAME) $(OBJ)
+	@tput setaf 2; echo "Done!"; tput sgr0
 
 re: fclean all
