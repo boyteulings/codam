@@ -3,3 +3,5 @@
 */eval/
 a.out
 core/0/libft-unit-test/
+*.o
+*.a
