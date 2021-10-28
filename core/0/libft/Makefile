@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := all
-CFLAGS = -c -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 NAME = libft.a
+.PHONY: all clean fclean re
 SRC = ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
@@ -44,14 +45,12 @@ all:
 	@echo "-< libft make >-"
 	@tput sgr0
 	@echo "Compiling..."
-	@gcc $(CFLAGS) $(SRC)
+	@gcc -c $(CFLAGS) $(SRC)
 	@echo "Creating static library..."
 	@ar -rc $(NAME) $(OBJ)
 	@tput setaf 2
 	@echo "Done!"
 	@tput sgr0
-
-.PHONY: all clean fclean re
 
 clean:
 	@tput setab 9; tput setaf 0
