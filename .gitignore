@@ -1,7 +1,8 @@
 .DS_Store
 *.sw?
-*/eval/
+/evals/
 a.out
-core/0/libft-unit-test/
+/core/0/libft-unit-test/
+/core/0/libftTester
 *.o
 *.a
