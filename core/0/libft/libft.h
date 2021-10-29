@@ -22,4 +22,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 #endif
