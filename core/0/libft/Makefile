@@ -21,7 +21,9 @@ SRC = ft_bzero.c \
 	ft_atoi.c \
 	ft_memchr.c \
 	ft_calloc.c \
-	ft_strdup.c
+	ft_strdup.c \
+	ft_strlcpy.c \
+	ft_strlcat.c
 
 OBJ = ft_bzero.o \
 	ft_isalnum.o \
@@ -42,7 +44,9 @@ OBJ = ft_bzero.o \
 	ft_atoi.o \
 	ft_memchr.o \
 	ft_calloc.o \
-	ft_strdup.o
+	ft_strdup.o \
+	ft_strlcpy.o \
+	ft_strlcat.o
 
 all:
 	@tput setab 28; tput setaf 0
