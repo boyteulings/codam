@@ -1,12 +1,11 @@
 int	ft_strlen(const char *s)
 {
-	int	strlen;
+	int	i;
 
-	strlen = 0;
-	while (*s != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		s++;
-		strlen++;
+		i++;
 	}
-	return (strlen);
+	return (i);
 }
