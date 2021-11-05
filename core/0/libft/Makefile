@@ -28,7 +28,8 @@ SRC = ft_bzero.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c \
+	ft_strjoin.c
 
 OBJ = ft_bzero.o \
 	ft_isalnum.o \
@@ -56,7 +57,8 @@ OBJ = ft_bzero.o \
 	ft_putchar_fd.o \
 	ft_putstr_fd.o \
 	ft_putendl_fd.o \
-	ft_putnbr_fd.o
+	ft_putnbr_fd.o \
+	ft_strjoin.o
 
 all:
 	@tput setab 28; tput setaf 0
