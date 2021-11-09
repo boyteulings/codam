@@ -29,7 +29,8 @@ SRC = ft_bzero.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-	ft_strjoin.c
+	ft_strjoin.c \
+	ft_substr.c
 
 OBJ = ft_bzero.o \
 	ft_isalnum.o \
@@ -58,7 +59,8 @@ OBJ = ft_bzero.o \
 	ft_putstr_fd.o \
 	ft_putendl_fd.o \
 	ft_putnbr_fd.o \
-	ft_strjoin.o
+	ft_strjoin.o \
+	ft_substr.o
 
 all:
 	@echo "-< libft make >-"
