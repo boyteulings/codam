@@ -6,8 +6,8 @@ char	ft_itoa(int n)
 }
 
 int	main(void)
-{    
-	int n;
+{
+	int	n;
 
 	n = 2;
 	printf("%c \n", ft_itoa(n));
