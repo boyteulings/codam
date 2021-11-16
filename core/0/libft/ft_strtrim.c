@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-unsigned int	frontcount(char const *s1, char const *set)
+unsigned int	fc(char const *s1, char const *set)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -24,11 +24,10 @@ unsigned int	frontcount(char const *s1, char const *set)
 		}
 		i++;
 	}
-	//printf("%i \n", fcount);
 	return (fcount);
 }
 
-unsigned int	backcount(char const *s1, char const *set)
+unsigned int	bc(char const *s1, char const *set)
 {
 	unsigned int	len;
 	unsigned int	i;
@@ -47,37 +46,28 @@ unsigned int	backcount(char const *s1, char const *set)
 			if (s1[len] == set[j])
 			{
 				if (bcount == i)
-				bcount++;
+					bcount++;
 			}
 			j++;
 		}
 		len--;
 		i++;
 	}
-	//printf("%i \n", bcount);
 	return (bcount);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*str;
-	unsigned int	fcount;
-	unsigned int	bcount;
-	
-	str = (char *) malloc(ft_strlen(s1));
-	fcount = frontcount(s1, set);
-	bcount = backcount(s1, set);
 
-	str = ft_substr(s1, fcount, ft_strlen(s1) - fcount - bcount);
+	if (!s1)
+		return (NULL);
+	if (ft_strncmp(s1, "", (size_t) ft_strlen(s1)) == 0)
+	{
+		s1 = ft_calloc(1, 1);
+		return ((char *) s1);
+	}
+	str = (char *) malloc(ft_strlen(s1));
+	str = ft_substr(s1, fc(s1, set), ft_strlen(s1) - fc(s1, set) - bc(s1, set));
 	return (str);
 }
-
-//int	main(void)
-//{
-//	printf("%s \n", ft_strtrim("akatsbbkasbbkasatsk", "kast"));
-//}
-//set: kas
-//s1: akabergts
-//
-//substr gebruiken
-//strlen en len--
