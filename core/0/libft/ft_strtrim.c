@@ -58,7 +58,7 @@ unsigned int	bc(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char			*str;
+	char	*str;
 
 	if (!s1)
 		return (NULL);
@@ -67,7 +67,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		s1 = ft_calloc(1, 1);
 		return ((char *) s1);
 	}
-	str = (char *) malloc(ft_strlen(s1));
 	str = ft_substr(s1, fc(s1, set), ft_strlen(s1) - fc(s1, set) - bc(s1, set));
 	return (str);
 }
