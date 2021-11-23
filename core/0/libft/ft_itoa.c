@@ -1,7 +1,6 @@
-#include <stdio.h> //remove before turn-in
 #include "libft.h"
 
-static int ft_intlen(long n)
+static int	ft_intlen(long n)
 {
 	int	len;
 
@@ -29,7 +28,7 @@ char	*ft_itoa(int n)
 	intlen = ft_intlen(nbr);
 	cnbr = malloc((intlen + 1) * sizeof(char));
 	if (cnbr == 0)
-		return NULL;
+		return (NULL);
 	cnbr[intlen] = '\0';
 	intlen--;
 	if (nbr < 0)

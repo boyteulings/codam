@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, const char *src)
 {
 	char	*str;
 	int		i;

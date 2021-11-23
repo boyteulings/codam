@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-unsigned int	fc(char const *s1, char const *set)
+static unsigned int	fc(char const *s1, char const *set)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -27,7 +27,7 @@ unsigned int	fc(char const *s1, char const *set)
 	return (fcount);
 }
 
-unsigned int	bc(char const *s1, char const *set)
+static unsigned int	bc(char const *s1, char const *set)
 {
 	unsigned int	len;
 	unsigned int	i;
