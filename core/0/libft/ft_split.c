@@ -3,11 +3,12 @@
 #include "libft.h"
 
 /* notes:
- * splitcount should pass pointer to splits?
+ * splitcount should pass pointer to splits location?
+ * use ft_substr
 */
 
 
-unsigned int	func_splitcount(char const *s, char c)
+unsigned int	fn_splitcount(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	splits;
@@ -39,8 +40,12 @@ char	**ft_split(char const *s, char c)
 	char			**str;
 
 	i = 0;
-	splitcount = func_splitcount(s, c);
+	splitcount = fn_splitcount(s, c);
 	chars = 0;
+	while (s[i])
+	{
+		
+	}
 	str[splits][chars] = '\0';
 }
 
@@ -49,7 +54,7 @@ int	main()
 	char	*s;
 	char	c;
 
-	s = "hoixdoeix";
+	s = "hoixdoeixhoi";
 	c = 'x';
 	printf("%i \n", splitcount(s, c));
 }
