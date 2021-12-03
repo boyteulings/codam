@@ -12,21 +12,16 @@ unsigned int	fn_splitcount(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	splits;
+	char			prevchar;
 
+	prevchar = c;
 	i = 0;
 	splits = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			if (i == ft_strlen(s))
-			{
-				if (
-				return (splits);
-			}
-			i++;
+		if (prevchar == c && s[i] != c)
 			splits++;
-		}
+		prevchar = s[i];
 		i++;
 	}
 	return (splits);
@@ -35,26 +30,23 @@ unsigned int	fn_splitcount(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	i;
-	unsigned int	splitcount;
-	unsigned int	chars;
+	unsigned int	splits;
+	char			*words;
 	char			**str;
 
 	i = 0;
-	splitcount = fn_splitcount(s, c);
-	chars = 0;
-	while (s[i])
-	{
-		
-	}
-	str[splits][chars] = '\0';
+	splits = fn_splitcount(s, c);
+	while (
 }
+
+
 
 int	main()
 {
 	char	*s;
 	char	c;
 
-	s = "hoixdoeixhoi";
-	c = 'x';
-	printf("%i \n", splitcount(s, c));
+	s = "1 2 3";
+	c = ' ';
+	printf("%i \n", fn_splitcount(s, c));
 }
