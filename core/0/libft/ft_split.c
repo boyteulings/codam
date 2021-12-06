@@ -54,9 +54,9 @@ int	fn_wordlen(char const *s, char c, int pos)
 
 char	*fn_strreturn(char const *s, char c, int pos)
 {
-	int		i;
-	int		dc;
-	int		si;
+	int	i;
+	int	dc;
+	int	si;
 	char	*wrd;
 
 	i = 0;
@@ -86,32 +86,35 @@ char	*fn_strreturn(char const *s, char c, int pos)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		row;
+	int	i;
+	int	row;
 	char	*words;
 	char	**array;
 	array = (char **)malloc(sizeof(char *) * (fn_wordcount(s, c) + 1));
 	i = 0;
 	row = 0;
+	while (row <= fn_wordcount(s, c))
+	{
+		array[row] = fn_strreturn(s, c, row);
+		row++;
+	}
 	array[row] = '\0';
-	return (array);
+	return ((char)array);
 }
 
 int	main()
 {
 	char	*s;
 	char	c;
-	char	*check;
 
 	s = "2345         12345678  1234";
 	c = ' ';
 	printf("wordcount: %i \n", fn_wordcount(s, c));
 	printf("wordlen: %d \n", fn_wordlen(s, c, 4));
-	check = fn_strreturn(s, c, 6);
-	printf("strreturn: %s \n", check);
+	printf("ft_split output: %s \n", *ft_split(s, c));
 }
 
-//string in positie 1 van dubbel array(row0) row++ en opnieuw
+//string in positie 1 van dubbel array(row0), row++ en dan opnieuw
 
 //hey ik wil gesplit worden\0
 //0123456789
