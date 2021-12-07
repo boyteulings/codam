@@ -49,7 +49,6 @@ static int	fn_wordlen(char const *s, char c, int pos)
 		pos++;
 		len++;
 	}
-	//printf("%i", len);
 	return (len);
 }
 
@@ -88,7 +87,6 @@ static char	*fn_strreturn(char const *s, char c, int *posInString)
 		si++;
 	}
 	wrd[i] = '\0';
-	//printf("%s \n", wrd);
 	*posInString = si;
 	return (wrd);
 }
@@ -97,7 +95,7 @@ char	**ft_split(char const *s, char c)
 {
 	int		row;
 	char	**array;
-	int 	posInString;
+	int		posInString;
 
 	posInString = 0;
 	array = (char **)malloc(sizeof(char *) * (fn_wordcount(s, c) + 1));
@@ -131,8 +129,6 @@ char	**ft_split(char const *s, char c)
 // 	printf("ft_split output: %s- \n", kaas[4]);
 // 	printf("ft_split output: %s- \n", kaas[5]);
 // }
-
-
 
 //string in positie 1 van dubbel array(row0), row++ en dan opnieuw
 
