@@ -1,14 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h> /* REMOVE BEFORE TURNIN */
-#include "libft.h"
+#include "libft.h" /* REMOVE */
+#include "unistd.h" /* REMOVE */
 
 /* notes:
  * splitcount should pass pointer to splits location?
  * use ft_substr
-*/
+ */
 
-
-unsigned int	fn_wordcount(char const *s, char c)
+static int	fn_wordcount(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	splits;
@@ -29,13 +29,13 @@ unsigned int	fn_wordcount(char const *s, char c)
 
 /*
 row = 0;
-arr[row] = fn_strreturn;
+array[row] = fn_strreturn;
 row++;
 
-arr[row] = "\0";
+array[row] = "\0";
 */
 
-int	fn_wordlen(char const *s, char c, int pos)
+static int	fn_wordlen(char const *s, char c, int pos)
 {
 	int	i;
 	int	len;
@@ -49,27 +49,35 @@ int	fn_wordlen(char const *s, char c, int pos)
 		pos++;
 		len++;
 	}
+	//printf("%i", len);
 	return (len);
 }
 
-char	*fn_strreturn(char const *s, char c, int pos)
+static void	fn_freestuff(int row, char **array)
 {
-	int	i;
-	int	dc;
-	int	si;
+	while (row > 0)
+	{
+		free(array[row]);
+		row--;
+	}
+	free(array);
+}
+
+static char	*fn_strreturn(char const *s, char c, int *posInString)
+{
+	int		i;
+	int		si;
 	char	*wrd;
 
 	i = 0;
-	dc = 0;
-	si = pos;
+	si = *posInString;
 	wrd = (char *)malloc(sizeof(char) * (unsigned long)(fn_wordlen + 1));
-	i = 0;
+	if (!wrd)
+		return (NULL);
 	while (s[si] == c)
 		si++;
-	printf("%i, %s \n", si, s);
 	while (s[si])
 	{
-		printf("%c", s[si]);
 		if (s[si] != c)
 		{
 			wrd[i] = s[si];
@@ -80,39 +88,51 @@ char	*fn_strreturn(char const *s, char c, int pos)
 		si++;
 	}
 	wrd[i] = '\0';
-	printf("%s", wrd);
+	//printf("%s \n", wrd);
+	*posInString = si;
 	return (wrd);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	row;
-	char	*words;
+	int		row;
 	char	**array;
+	int 	posInString;
+
+	posInString = 0;
 	array = (char **)malloc(sizeof(char *) * (fn_wordcount(s, c) + 1));
-	i = 0;
+	if (!array)
+		return (NULL);
 	row = 0;
-	while (row <= fn_wordcount(s, c))
+	while (row < fn_wordcount(s, c))
 	{
-		array[row] = fn_strreturn(s, c, row);
+		array[row] = fn_strreturn(s, c, &posInString);
+		if (array[row] == NULL)
+			fn_freestuff(row, array);
 		row++;
 	}
-	array[row] = '\0';
-	return ((char)array);
+	array[row] = NULL;
+	return (array);
 }
 
-int	main()
-{
-	char	*s;
-	char	c;
+// int	main()
+// {
+// 	char	*s;
+// 	char	c;
+// 	char **kaas;
 
-	s = "2345         12345678  1234";
-	c = ' ';
-	printf("wordcount: %i \n", fn_wordcount(s, c));
-	printf("wordlen: %d \n", fn_wordlen(s, c, 4));
-	printf("ft_split output: %s \n", *ft_split(s, c));
-}
+// 	s = "      split       this for   me  !      ";
+// 	c = ' ';
+// 	kaas = ft_split(s, c);
+// 	printf("ft_split output: %s- \n", kaas[0]);
+// 	printf("ft_split output: %s- \n", kaas[1]);
+// 	printf("ft_split output: %s- \n", kaas[2]);
+// 	printf("ft_split output: %s- \n", kaas[3]);
+// 	printf("ft_split output: %s- \n", kaas[4]);
+// 	printf("ft_split output: %s- \n", kaas[5]);
+// }
+
+
 
 //string in positie 1 van dubbel array(row0), row++ en dan opnieuw
 
@@ -124,4 +144,3 @@ int	main()
 //gesplit\0
 //worden\0
 //\0
-
