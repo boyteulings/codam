@@ -36,7 +36,7 @@ static int	fn_wordlen(char const *s, char c, int pos)
 
 static void	fn_freestuff(int row, char **array)
 {
-	while (row > 0)
+	while (row >= 0)
 	{
 		free(array[row]);
 		row--;
@@ -80,6 +80,8 @@ char	**ft_split(char const *s, char c)
 	int		posInString;
 	int		wc;
 
+	if (s == 0)
+		return (NULL);
 	wc = fn_wordcount(s, c);
 	posInString = 0;
 	array = (char **)malloc(sizeof(char *) * (wc + 1));
