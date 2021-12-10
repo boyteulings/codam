@@ -36,7 +36,7 @@ static int	fn_wordlen(char const *s, char c, int pos)
 
 static void	fn_freestuff(int row, char **array)
 {
-	while (row >= 0)
+	while (row > 0)
 	{
 		free(array[row]);
 		row--;
