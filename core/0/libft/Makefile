@@ -73,7 +73,9 @@ OBJ = ft_bzero.o \
 	ft_split.o
 
 all:
+	@tput setaf 39
 	@echo "-< libft make >-"
+	@tput sgr0
 	@echo "Compiling..."
 	@gcc -c $(CFLAGS) $(SRC)
 	@echo "Creating static library..."
@@ -83,7 +85,9 @@ all:
 	@tput sgr0
 
 clean:
+	@tput setaf 11
 	@echo "-> libft clean <-"
+	@tput sgr0
 	@echo "Cleaning up..."
 	@rm -f $(OBJ)
 	@tput setaf 2
@@ -91,7 +95,9 @@ clean:
 	@tput sgr0
 
 fclean:
+	@tput setaf 9
 	@echo "-x libft fclean x-"
+	@tput sgr0
 	@echo "Cleaning up obj and archive files..."
 	@tput sgr0
 	@rm -f $(NAME) $(OBJ)
