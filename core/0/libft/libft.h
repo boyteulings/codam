@@ -1,7 +1,18 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   libft.h                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: bteuling <boyteulings@gmail.com>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/14 14:38:53 by bteuling      #+#    #+#                 */
+/*   Updated: 2021/12/14 14:44:39 by bteuling      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isprint(int c);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_split.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: bteuling <boyteulings@gmail.com>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/14 14:41:00 by bteuling      #+#    #+#                 */
+/*   Updated: 2021/12/14 14:45:27 by bteuling      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 static int	fn_wordcount(char const *s, char c)
@@ -44,15 +56,15 @@ static void	fn_freestuff(int row, char **array)
 	free(array);
 }
 
-static char	*fn_strreturn(char const *s, char c, int *posInString)
+static char	*fn_strreturn(char const *s, char c, int *posinstring)
 {
 	int		i;
 	int		si;
 	char	*wrd;
 
 	i = 0;
-	si = *posInString;
-	wrd = (char *)malloc(sizeof(char) * (fn_wordlen(s, c, *posInString) + 1));
+	si = *posinstring;
+	wrd = (char *)malloc(sizeof(char) * (fn_wordlen(s, c, *posinstring) + 1));
 	if (!wrd)
 		return (NULL);
 	while (s[si] == c)
@@ -69,7 +81,7 @@ static char	*fn_strreturn(char const *s, char c, int *posInString)
 		si++;
 	}
 	wrd[i] = '\0';
-	*posInString = si;
+	*posinstring = si;
 	return (wrd);
 }
 
@@ -77,20 +89,20 @@ char	**ft_split(char const *s, char c)
 {
 	int		row;
 	char	**array;
-	int		posInString;
+	int		posinstring;
 	int		wc;
 
 	if (s == 0)
 		return (NULL);
 	wc = fn_wordcount(s, c);
-	posInString = 0;
+	posinstring = 0;
 	array = (char **)malloc(sizeof(char *) * (wc + 1));
 	if (!array)
 		return (NULL);
 	row = 0;
 	while (row < wc)
 	{
-		array[row] = fn_strreturn(s, c, &posInString);
+		array[row] = fn_strreturn(s, c, &posinstring);
 		if (array[row] == NULL)
 			fn_freestuff(row, array);
 		row++;
