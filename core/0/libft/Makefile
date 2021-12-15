@@ -1,4 +1,3 @@
-.DEFAULT_GOAL := all
 CFLAGS = -Wall -Werror -Wextra
 NAME = libft.a
 .PHONY: all clean fclean re
