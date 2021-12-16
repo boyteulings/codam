@@ -71,6 +71,9 @@ OBJ = ft_bzero.o \
 	ft_strmapi.o \
 	ft_split.o
 
+$(NAME): $(OBJ)
+	@ar -rc
+
 all:
 	@tput setaf 39
 	@echo "-< libft make >-"
