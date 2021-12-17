@@ -6,7 +6,7 @@
 /*   By: bteuling <boyteulings@gmail.com>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/14 14:40:26 by bteuling      #+#    #+#                 */
-/*   Updated: 2021/12/14 14:40:27 by bteuling      ########   odam.nl         */
+/*   Updated: 2021/12/17 18:33:23 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	cs1 = s1;
 	cs2 = s2;
 	i = 0;
-	while (n > 0)
+	while (i < n)
 	{
 		if (cs1[i] != cs2[i])
 			return (cs1[i] - cs2[i]);
 		i++;
-		n--;
 	}
 	return (0);
 }
