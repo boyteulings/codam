@@ -1,6 +1,8 @@
 CFLAGS = -Wall -Werror -Wextra
+RM = rm -f
 NAME = libft.a
-.PHONY: all clean fclean re
+.PHONY : all clean fclean re
+
 SRC = ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
@@ -36,75 +38,19 @@ SRC = ft_bzero.c \
 	ft_strmapi.c \
 	ft_split.c
 
-OBJ = ft_bzero.o \
-	ft_isalnum.o \
-	ft_isalpha.o \
-	ft_isascii.o \
-	ft_isdigit.o \
-	ft_isprint.o \
-	ft_memset.o \
-	ft_strlen.o \
-	ft_strncmp.o \
-	ft_tolower.o \
-	ft_toupper.o \
-	ft_memcmp.o \
-	ft_strchr.o \
-	ft_strrchr.o \
-	ft_memcpy.o \
-	ft_memmove.o \
-	ft_atoi.o \
-	ft_memchr.o \
-	ft_calloc.o \
-	ft_strdup.o \
-	ft_strlcpy.o \
-	ft_strlcat.o \
-	ft_strnstr.o \
-	ft_putchar_fd.o \
-	ft_putstr_fd.o \
-	ft_putendl_fd.o \
-	ft_putnbr_fd.o \
-	ft_strjoin.o \
-	ft_substr.o \
-	ft_strtrim.o \
-	ft_itoa.o \
-	ft_striteri.o \
-	ft_strmapi.o \
-	ft_split.o
+OBJ = $(SRC:.c=.o)
 
-$(NAME): $(OBJ)
-	@ar -rc
-
-all:
-	@tput setaf 39
-	@echo "-< libft make >-"
-	@tput sgr0
-	@echo "Compiling..."
-	@gcc -c $(CFLAGS) $(SRC)
-	@echo "Creating static library..."
+$(NAME) : $(OBJ)
 	@ar -rc $(NAME) $(OBJ)
-	@tput setaf 2
-	@echo "Done!"
-	@tput sgr0
 
-clean:
-	@tput setaf 11
-	@echo "-> libft clean <-"
-	@tput sgr0
-	@echo "Cleaning up..."
-	@rm -f $(OBJ)
-	@tput setaf 2
-	@echo "Done!"
-	@tput sgr0
+all : $(NAME)
 
-fclean:
-	@tput setaf 9
-	@echo "-x libft fclean x-"
-	@tput sgr0
+clean :
+	@echo "Cleaning up obj files..."
+	@$(RM) $(OBJ)
+
+fclean :
 	@echo "Cleaning up obj and archive files..."
-	@tput sgr0
-	@rm -f $(NAME) $(OBJ)
-	@tput setaf 2
-	@echo "Done!"
-	@tput sgr0
+	@$(RM) $(NAME) $(OBJ)
 
-re: fclean all
+re : fclean all
