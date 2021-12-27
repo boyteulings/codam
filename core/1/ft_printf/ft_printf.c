@@ -1,3 +1,20 @@
 /* notes:
- * itoa base?
+ * itoa base or putnbr base?
  */
+
+int	fn_flag(char *c)
+{
+	int	i;
+
+	i = 0;
+	while (c[i] != '%')
+		i++;
+	if (c[i] == '%')
+	{
+		
+	}
+}
+
+int	ft_printf(const char *, )
+{
+}
