@@ -1,5 +1,6 @@
 /* notes:
  * itoa base or putnbr base?
+ * probably putnbr (no base?)
  */
 
 int	fn_flag(char *c)
