@@ -1,5 +1,6 @@
 /* notes:
  * itoa base or putnbr base?
+ * probably putnbr (no base?)
  */
 #include <stdarg.h>
 
