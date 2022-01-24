@@ -6,7 +6,7 @@
 /*   By: bteuling <boyteulings@gmail.com>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/14 14:37:34 by bteuling      #+#    #+#                 */
-/*   Updated: 2021/12/14 14:37:35 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/01/24 13:28:21 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p;
-	size_t			i;
+	char	*p;
+	size_t	i;
 
 	p = s;
 	i = 0;
