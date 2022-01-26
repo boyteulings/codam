@@ -3,6 +3,7 @@
  * probably putnbr (no base?)
  */
 #include <stdarg.h>
+#include "libft.h"
 
 int	fn_flag(char *c)
 {
@@ -24,5 +25,6 @@ int	ft_printf(const char *, ...)
 	va_list	args;
 	int		i;
 
-	va_start(args,
+	va_start(args, 
+	return (i);
 }
