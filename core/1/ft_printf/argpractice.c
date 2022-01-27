@@ -73,9 +73,9 @@ void free_n(int n, ...)
  * Support int, char and string.
  * 
  * @param[in] fmt The formatting string, e.g: "Hell%c %s! I am %d years old!\n"
- * @Usage: ft_printf("Hell%c %s! I am %d years old!\n", 'o', "World", 21);
+ * @Usage: ft_printf("Hell%c %s!\ I am %d years old!\n", 'o', "World", 21);
  */
-void ft_printf(const char* fmt, ...)
+void ft_printf(const char *fmt, ...)
 {
 	va_list(args);
 	va_start(args, fmt);
@@ -83,15 +83,15 @@ void ft_printf(const char* fmt, ...)
 	{
 		if (*fmt == 's')
 		{
-			ft_putstr()
+			ft_putstr();
 		}
 		if (*fmt == 'd')
 		{
-			ft_putnbr()
+			ft_putnbr();
 		}
 		if (*fmt == 'c')
 		{
-			ft_putchar()
+			ft_putchar();
 		}
 		fmt++;
 	}
@@ -101,14 +101,14 @@ void ft_printf(const char* fmt, ...)
 
 int main(int argc, char const *argv[])
 {
-	const int sum = sumreturn(5, 1, 2, 3, 4, 5);
-	char* a = malloc(12);
-	int* b = malloc(12 * sizeof(int));
-	float* c = malloc(12 * sizeof(float));
-	double* d = malloc(12 * sizeof(double));
-	free_n(4, a, b, c, d);
-	free(d);
-	printf("%d\n", sum);
+	//const int sum = sumreturn(5, 1, 2, 3, 4, 5);
+	//char* a = malloc(12);
+	//int* b = malloc(12 * sizeof(int));
+	//float* c = malloc(12 * sizeof(float));
+	//double* d = malloc(12 * sizeof(double));
+	//free_n(4, a, b, c, d);
+	//free(d);
+	//printf("%d\n", sum);
 	ft_printf("Hell%c %s! I am %d %s old!\n", 'c', "World!", 20, "years");
 	return 0;
 }
