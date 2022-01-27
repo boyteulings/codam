@@ -73,7 +73,7 @@ void free_n(int n, ...)
  * Support int, char and string.
  * 
  * @param[in] fmt The formatting string, e.g: "Hell%c %s! I am %d years old!\n"
- * @Usage: ft_printf("Hell%c %s!\ I am %d years old!\n", 'o', "World", 21);
+ * @Usage: ft_printf("Hell%c %s! I am %d years old!\n", 'o', "World", 21);
  */
 void ft_printf(const char *fmt, ...)
 {
