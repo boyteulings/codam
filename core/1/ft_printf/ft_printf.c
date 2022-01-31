@@ -6,7 +6,7 @@
 /*   By: bteuling <boyteulings@gmail.com>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/27 16:55:07 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/01/27 16:56:20 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/01/31 16:45:45 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	ft_printf(const char *fmt, ...)
 	va_list	args;
 	int		i;
 
+	i = 0;
 	va_start(args, fmt);
 	while (*fmt)
 	{
