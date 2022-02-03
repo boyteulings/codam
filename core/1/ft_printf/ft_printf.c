@@ -6,7 +6,7 @@
 /*   By: bteuling <boyteulings@gmail.com>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/27 16:55:07 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/01/31 16:45:45 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/02/01 15:35:22 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,11 @@
  * split up subfunctions for line savings
  * document everything!
  */
+
 #include <stdarg.h>
 //#include "libft.h"
 
-// int	fn_flag(char *c)
-// {
-// 	int	i;
 
-// 	i = 0;
-// 	while (c[i])
-// 		i++;
-// 	if (c[i] == '%')
-// 	{
-// 		i++;
 // 		return (c[i])
 // 	}
 // 	else exit ()
@@ -50,3 +42,13 @@ int	ft_printf(const char *fmt, ...)
 	}
 	return (i);
 }
+// int	fn_flag(char *c)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (c[i])
+// 		i++;
+// 	if (c[i] == '%')
+// 	{
+// 		i++;

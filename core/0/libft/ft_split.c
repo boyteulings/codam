@@ -6,12 +6,13 @@
 /*   By: bteuling <boyteulings@gmail.com>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/14 14:41:00 by bteuling      #+#    #+#                 */
-/*   Updated: 2021/12/14 14:45:27 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/02/03 16:48:08 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+// counts delimiters and returns amount of splits required
 static int	fn_wordcount(char const *s, char c)
 {
 	int		i;
@@ -31,6 +32,7 @@ static int	fn_wordcount(char const *s, char c)
 	return (splits);
 }
 
+// counts length of characters between delimiter and returns int length of split strings
 static int	fn_wordlen(char const *s, char c, int pos)
 {
 	int	len;
@@ -46,6 +48,7 @@ static int	fn_wordlen(char const *s, char c, int pos)
 	return (len);
 }
 
+// free memory in case array[row] == NULL
 static void	fn_freestuff(int row, char **array)
 {
 	while (row > 0)
@@ -56,6 +59,7 @@ static void	fn_freestuff(int row, char **array)
 	free(array);
 }
 
+// splits string into substrings and returns char wrd which are seperate strings after the split
 static char	*fn_strreturn(char const *s, char c, int *posinstring)
 {
 	int		i;
@@ -85,6 +89,7 @@ static char	*fn_strreturn(char const *s, char c, int *posinstring)
 	return (wrd);
 }
 
+// final function which puts split strings into main array
 char	**ft_split(char const *s, char c)
 {
 	int		row;
