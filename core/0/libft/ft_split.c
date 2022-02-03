@@ -6,7 +6,7 @@
 /*   By: bteuling <boyteulings@gmail.com>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/14 14:41:00 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/02/03 16:48:08 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/02/03 18:54:04 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static int	fn_wordcount(char const *s, char c)
 	return (splits);
 }
 
-// counts length of characters between delimiter and returns int length of split strings
+// counts length of characters between delimiter and
+// returns int length of split strings
 static int	fn_wordlen(char const *s, char c, int pos)
 {
 	int	len;
@@ -59,7 +60,8 @@ static void	fn_freestuff(int row, char **array)
 	free(array);
 }
 
-// splits string into substrings and returns char wrd which are seperate strings after the split
+// splits string into substrings and returns char wrd
+// which are seperate strings after the split
 static char	*fn_strreturn(char const *s, char c, int *posinstring)
 {
 	int		i;
