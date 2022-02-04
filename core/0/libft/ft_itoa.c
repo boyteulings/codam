@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 
+// counts length of long n, if negative make n positive and +1 len
 static int	fn_intlen(long n)
 {
 	int	len;
@@ -30,6 +31,10 @@ static int	fn_intlen(long n)
 	return (len);
 }
 
+// converts int to char, if negative make long nbr positive
+// and set cnbr[0] to '-'.
+// if nbr == 0 set cnbr[0] to '0' (ascii 48)
+// before you modulo 10 the current char + ascii 48. 
 char	*ft_itoa(int n)
 {
 	long	nbr;

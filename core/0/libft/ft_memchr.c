@@ -12,6 +12,7 @@
 
 #include <stddef.h>
 
+// locates the first occurrence of c (converted to unsigned char) in s
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned long			i;

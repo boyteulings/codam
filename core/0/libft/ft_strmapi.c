@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
+// applies (*f) to each char of *s, and creates/mallocs a new string
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;

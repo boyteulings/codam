@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// if negative set sign -1 to then do result * -1
+// result = result * 10 + str[i] - '0';
+// subtract 48 from character to convert ascii to int
 int	ft_atoi(const char *str)
 {
 	int	result;

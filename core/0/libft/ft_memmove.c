@@ -12,6 +12,7 @@
 
 #include <stddef.h>
 
+// if dst > src copy backwards, so as not to leave any empty spaces
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
