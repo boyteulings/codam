@@ -13,6 +13,7 @@
 #include <stddef.h>
 #include "libft.h"
 
+// appends src to end of dst, up to as much as dstsize - dst - 1
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

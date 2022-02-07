@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
+// allocates memory for copy of s1, copies, and returns a pointer to it
 char	*ft_strdup(const char *s1)
 {
 	char	*dst;

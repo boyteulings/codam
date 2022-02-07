@@ -12,6 +12,7 @@
 
 #include <stddef.h>
 
+// bzero writes n zeroed bytes to string s. If n is zero, bzero does nothing
 void	ft_bzero(void *s, size_t n)
 {
 	char	*p;

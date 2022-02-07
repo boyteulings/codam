@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// applies *f on each character of *s. each character is passed by address to f
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;

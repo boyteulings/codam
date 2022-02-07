@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
+// mallocs and returns a new string, resulting from concatenation of s1 & s2
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;

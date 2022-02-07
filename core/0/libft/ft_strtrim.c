@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
+// counts characters to remove at start of *s1
 static unsigned int	fc(char const *s1, char const *set)
 {
 	unsigned int	i;
@@ -39,6 +40,7 @@ static unsigned int	fc(char const *s1, char const *set)
 	return (fcount);
 }
 
+// counts characters to remove at end of *s1
 static unsigned int	bc(char const *s1, char const *set)
 {
 	unsigned int	len;

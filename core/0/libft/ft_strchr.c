@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// locates the first occurence of c in the string s
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;

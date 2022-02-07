@@ -13,6 +13,8 @@
 #include <stdlib.h>
 #include "libft.h"
 
+// contiguously allocates enough space for count objects of size bytes of memory
+// and returns a pointer to the allocated memory
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;

@@ -13,6 +13,8 @@
 #include <stddef.h>
 #include "libft.h"
 
+// locates first occurrence of needle in haystack,
+// not searching more than len characters
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
