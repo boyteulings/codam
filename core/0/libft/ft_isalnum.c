@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// checks if character is alphanumeric
 int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

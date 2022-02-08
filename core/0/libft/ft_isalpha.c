@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// checks if character is in the alphabet
 int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

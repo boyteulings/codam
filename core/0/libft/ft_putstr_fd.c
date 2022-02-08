@@ -12,6 +12,7 @@
 
 #include <unistd.h>
 
+// outputs string s to file descriptor(fd)
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;

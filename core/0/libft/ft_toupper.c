@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// shifts characters in the ASCII table to uppercase
 int	ft_toupper(int c)
 {
 	if ((c >= 'a') && (c <= 'z'))

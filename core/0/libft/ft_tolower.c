@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// shifts characters in the ASCII table to lowercase
 int	ft_tolower(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))

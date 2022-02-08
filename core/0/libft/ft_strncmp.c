@@ -12,6 +12,7 @@
 
 #include <stddef.h>
 
+// compares s1 with s2, for up to n characters
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;

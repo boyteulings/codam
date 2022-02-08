@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// counts and returns length of string *s
 int	ft_strlen(const char *s)
 {
 	int	i;

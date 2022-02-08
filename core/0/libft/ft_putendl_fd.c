@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include "libft.h"
 
+// outputs s to given file descriptor(fd) followed by newline
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)

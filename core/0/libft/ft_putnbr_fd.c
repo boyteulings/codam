@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-// recursively divides/modulos n to be able to write it
+// recursively divides & modulos n to be able to write it into fd
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	nbr;
