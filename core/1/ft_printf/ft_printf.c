@@ -26,7 +26,18 @@
 // 	else exit ()
 // }
 
-static char fn_fmt_c()
+static char fn_returnfmt(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (i != '%')
+	{
+		i++;
+	}
+	i++;
+	return (i);
+}
 
 int	ft_printf(const char *fmt, ...)
 {
