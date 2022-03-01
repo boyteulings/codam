@@ -26,17 +26,17 @@
 // 	else exit ()
 // }
 
-static char fn_returnfmt(const char *s)
+static char returnfmt(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (i != '%')
+	while (s[i] != '%')
 	{
 		i++;
 	}
 	i++;
-	return (i);
+	return (s[i]);
 }
 
 int	ft_printf(const char *fmt, ...)
