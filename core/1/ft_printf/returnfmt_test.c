@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-static char returnfmt(const char *s)
+static char	returnfmt(const char *s)
 {
 	int	i;
 

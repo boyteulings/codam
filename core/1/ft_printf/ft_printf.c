@@ -20,13 +20,12 @@
 #include <stdarg.h>
 //#include "libft.h"
 
-
 // 		return (c[i])
 // 	}
 // 	else exit ()
 // }
 
-static char returnfmt(const char *s)
+static char	returnfmt(const char *s)
 {
 	int	i;
 
