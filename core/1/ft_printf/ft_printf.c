@@ -20,10 +20,10 @@
 #include <stdarg.h>
 //#include "libft.h"
 
-// 		return (c[i])
-// 	}
-// 	else exit ()
-// }
+static void	fmt_c(args)
+{
+	write
+}
 
 static char	returnfmt(const char *s)
 {
@@ -31,9 +31,7 @@ static char	returnfmt(const char *s)
 
 	i = 0;
 	while (s[i] != '%')
-	{
 		i++;
-	}
 	i++;
 	return (s[i]);
 }
@@ -47,18 +45,18 @@ int	ft_printf(const char *fmt, ...)
 	va_start(args, fmt);
 	while (*fmt)
 	{
-		if (*fmt == 'c')
-			fn_fmt_c(args, fmt);
+		if (returnfmt(*fmt) == 'c')
+			fmt_c(args, fmt);
 	}
 	return (i);
 }
-// int	fn_flag(char *c)
-// {
-// 	int	i;
 
-// 	i = 0;
-// 	while (c[i])
-// 		i++;
-// 	if (c[i] == '%')
-// 	{
-// 		i++;
+//DELETE BEFORE TURNIN
+int	main(void)
+{
+	char	c;
+
+	c = 'a';
+	ft_printf("%c", c);
+	return (0);
+}
