@@ -22,7 +22,7 @@
 
 static void	fmt_c(args)
 {
-	write
+	write(1, c, 1);
 }
 
 static char	returnfmt(const char *s)
