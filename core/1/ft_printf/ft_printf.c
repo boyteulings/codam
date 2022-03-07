@@ -18,11 +18,12 @@
  */
 
 #include <stdarg.h>
+#include <unistd.h>
 //#include "libft.h"
 
 static void	fmt_c(args)
 {
-	write(1, c, 1);
+	write(1, &args, 1);
 }
 
 static char	returnfmt(const char *s)
@@ -45,8 +46,8 @@ int	ft_printf(const char *fmt, ...)
 	va_start(args, fmt);
 	while (*fmt)
 	{
-		if (returnfmt(*fmt) == 'c')
-			fmt_c(args, fmt);
+		if (returnfmt(fmt) == 'c')
+			fmt_c(args);
 	}
 	return (i);
 }
