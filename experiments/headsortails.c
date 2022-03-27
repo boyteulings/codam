@@ -28,7 +28,7 @@ int	main(void)
 	i = 0;
 	printf("heads or tails?\n");
 	scanf("%s", str);
-	if (str != 0)
+	if (str)
 	{
 		i = rand() % 2;
 		printf("The result is: ");
@@ -36,17 +36,17 @@ int	main(void)
 		{
 			printf("tails!\n");
 			if (ft_strcmp(str, "tails") == 0)
-				printf("Your guess was correct! :D\n");
+				printf("Your guess of %s was correct! :D\n", str);
 			else
-				printf("Your guess was incorrect :(\n");
+				printf("Your guess of %s was incorrect :(\n", str);
 		}
 		else if (i == 1)
 		{
 			printf("heads!\n");
 			if (ft_strcmp(str, "heads") == 0)
-				printf("Your guess was correct! :D\n");
+				printf("Your guess of %s was correct! :D\n", str);
 			else
-				printf("Your guess was incorrect :(\n");
+				printf("Your guess of %s was incorrect :(\n", str);
 
 		}
 	}
