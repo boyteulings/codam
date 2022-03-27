@@ -21,13 +21,13 @@ int	ft_strcmp(char *s1, char *s2)
 
 int	main(void)
 {
-	char	str;
+	char	*str;
 	int	i;
 
 	srand(time(0));
 	i = 0;
 	printf("heads or tails?\n");
-	scanf("%s", &str);
+	scanf("%s", str);
 	if (str != 0)
 	{
 		i = rand() % 2;
@@ -35,10 +35,19 @@ int	main(void)
 		if (i == 0)
 		{
 			printf("tails!\n");
+			if (ft_strcmp(str, "tails") == 0)
+				printf("Your guess was correct! :D\n");
+			else
+				printf("Your guess was incorrect :(\n");
 		}
 		else if (i == 1)
 		{
 			printf("heads!\n");
+			if (ft_strcmp(str, "heads") == 0)
+				printf("Your guess was correct! :D\n");
+			else
+				printf("Your guess was incorrect :(\n");
+
 		}
 	}
 	else
