@@ -1,6 +1,10 @@
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdio.h>
+
+static	void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 static	void	chararg(int n, ...)
 {
@@ -9,7 +13,7 @@ static	void	chararg(int n, ...)
 
 	va_start(args, n);
 	c = va_arg(args, int);
-	putchar(c);
+	ft_putchar(c);
 	write(1, "\n", 1);
 	va_end(args);
 	return ;
@@ -18,5 +22,5 @@ static	void	chararg(int n, ...)
 int	main(void)
 {
 	chararg('a');
-	return 0;
+	return (0);
 }
