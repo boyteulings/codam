@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "] Architecture: $(uname -a)"
+echo "] Physical CPUs: $(lscpu | grep 'Socket(s):' | awk '{printf "%d", $2}')"
+echo "] CPU threads: $(cat /proc/cpuinfo | grep processor | wc -l)"
+echo "] Memory usage: $(free | grep 'Mem:' | awk '{printf "%.2f MB of %.2f MB (%.2f%%)", $3/1000, $2/1000, 100*$3/$2}')"
+echo "] Storage usage: $(df --total | grep 'total' | awk '{printf "%.2f MB of %.2f MB (%s)", $3/1000, $2/1000, $5}')"
+echo "] Current CPU usage: $(vmstat | awk 'NR==3{printf "%d%%", $13}')"
+echo "] Last boot: $(uptime -s)"
+echo "] LVM active: $(lsblk | grep 'lvm' | wc -l | awk '{if ($0 > 0) print "yes"; else print "no";}')"
+echo "] Active TCP connections: $(ss -t | wc -l | awk '{printf "%d", $0 - 1}')"
+echo "] Users logged in: $(who | wc -l | awk '{printf "%d", $0}')" 
+echo "] IP & MAC address: $(ip -4 a | awk 'NR==5 {printf "%s", $2}') ($(ip link | awk 'NR==4 {printf "%s", $2}'))"
+echo "] Sudo commands issued: $(wc -l /var/log/sudo | grep -o '[0-9]\+')"
