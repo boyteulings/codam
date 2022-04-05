@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "] Architecture: $(uname -a)"
-echo "] Physical CPUs: $(lscpu | grep 'Socket(s):' | awk '{printf "%d", $2}')"
-echo "] CPU threads: $(cat /proc/cpuinfo | grep processor | wc -l)"
+echo "] CPU cores: $(lscpu | awk 'NR==8 {printf "%d", $4}')"
+echo "] CPU threads: $(lscpu | awk 'NR==5 {printf "%d", $2}')"
 echo "] Memory usage: $(free | grep 'Mem:' | awk '{printf "%.2f MB of %.2f MB (%.2f%%)", $3/1000, $2/1000, 100*$3/$2}')"
 echo "] Storage usage: $(df --total | grep 'total' | awk '{printf "%.2f MB of %.2f MB (%s)", $3/1000, $2/1000, $5}')"
 echo "] Current CPU usage: $(vmstat | awk 'NR==3{printf "%d%%", $13}')"
