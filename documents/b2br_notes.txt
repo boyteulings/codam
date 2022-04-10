@@ -1,0 +1,18 @@
+---Directories & File locations---
+
+monitoring.sh:
+	/usr/local/bin/monitoring.sh
+
+crontab:
+	/etc/crontab
+
+pwquality:
+	/etc/security/pwquality.conf
+
+---Commands---
+
+Firewall:
+	sudo ufw status
+
+Hostname:
+	sudoedit /etc/hostname
