@@ -21,6 +21,6 @@ static	void	chararg(int n, ...)
 
 int	main(void)
 {
-	chararg('a');
+	chararg(2, 'a', 'b');
 	return (0);
 }
