@@ -12,9 +12,13 @@ static	void	chararg(int n, ...)
 	char	c;
 
 	va_start(args, n);
-	c = va_arg(args, int);
-	ft_putchar(c);
-	write(1, "\n", 1);
+	while (n > 0)
+	{
+		c = va_arg(args, int);
+		ft_putchar(c);
+		write(1, "\n", 1);
+		n--;
+	}
 	va_end(args);
 	return ;
 }
