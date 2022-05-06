@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: bteuling <boyteulings@gmail.com>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/14 14:40:52 by bteuling      #+#    #+#                 */
-/*   Updated: 2021/12/14 14:40:52 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/05/06 18:01:28 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (n > 0)
 	{
 		if (cs[i] == cc)
-			return ((char *)&s[i]);
+			return (&((char *)s)[i]);
 		i++;
 		n--;
 	}
