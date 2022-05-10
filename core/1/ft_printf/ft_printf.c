@@ -6,7 +6,7 @@
 /*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/10 19:54:40 by Boy Teulings     ###   ########.fr       */
+/*   Updated: 2022/05/10 21:39:45 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int	fmt_c(char flag, va_list args)
 	return (0);
 }
 
-//main function
+/* main function
+ TODO: add function in while loop that checks for and returns the character after
+ -a found percent sign
+*/
 int	ft_printf(const char *str, ...)
 {
 	va_list args;
