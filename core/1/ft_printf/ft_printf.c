@@ -6,7 +6,7 @@
 /*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/10 19:36:30 by Boy Teulings     ###   ########.fr       */
+/*   Updated: 2022/05/10 19:54:40 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #include <unistd.h>
 #include "libft/libft.h"
 
-//optimization: strchr for finding % and then - string to write in one go
+//optimization: strchr for finding % and then - string to write in one go,
+// writing every character seperately is slower
 
+//function for when format is c, should be moved to seperate files later
 int	fmt_c(char flag, va_list args)
 {
 	if (flag == 'c')
@@ -25,6 +27,7 @@ int	fmt_c(char flag, va_list args)
 	return (0);
 }
 
+//main function
 int	ft_printf(const char *str, ...)
 {
 	va_list args;
@@ -49,6 +52,7 @@ int	ft_printf(const char *str, ...)
 	return (0);
 }
 
+//REMOVE BEFORE TURN-IN
 int	main(void)
 {
 	ft_printf("123456%c789", 'a');
