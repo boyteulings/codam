@@ -5,52 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/10 19:36:30 by Boy Teulings     ###   ########.fr       */
+/*   Created: 2022/05/09 17:53:44 by Boy Teulings      #+#    #+#             */
+/*   Updated: 2022/05/10 16:46:42 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* notes:
+ * itoa base or putnbr base?
+ * probably putnbr (no base?)
+ * split up subfunctions for line savings
+ * document everything!
+ */
 
 #include <stdarg.h>
 #include <unistd.h>
 #include "libft/libft.h"
 
-//optimization: strchr for finding % and then - string to write in one go
-
-int	fmt_c(char flag, va_list args)
+static void	fmt_c(int n, ...)
 {
-	if (flag == 'c')
-	{
-		ft_putchar_fd(va_arg(args, int), 1);
-	}
-	return (0);
+	va_list	args;
+	char	c;
+
+	c = va_arg(args, int);
+	ft_putchar_fd(c, 1);
 }
 
-int	ft_printf(const char *str, ...)
+static char	returnfmt(const char *s)
 {
-	va_list args;
 	int	i;
 
 	i = 0;
-	va_start(args, str);
-	while (str[i])
-	{
-		if (str[i] == '%')
-		{	
-			fmt_c(str[i + 1], args);
-			i++;
-		}
-		else
-		{
-			write(1, &str[i], 1);
-		}
+	while (s[i] != '%')
 		i++;
-	}
-	va_end(args);
-	return (0);
+	i++;
+	return (s[i]);
 }
 
+int	ft_printf(const char *fmt, ...)
+{
+	va_list	args;
+	int		i;
+
+	i = 0;
+	va_start(args, fmt);
+	while (*fmt)
+	{
+		if (returnfmt(fmt) == 'c')
+			write(1, "y", 1);
+			//fmt_c(va_arg(args, int));
+	}
+	return (i);
+}
+
+//DELETE BEFORE TURNIN
 int	main(void)
 {
-	ft_printf("123456%c789", 'a');
+	char	c;
+
+	c = 'a';
+	ft_printf("%c", c);
 	return (0);
 }
