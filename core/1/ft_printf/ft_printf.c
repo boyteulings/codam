@@ -6,7 +6,7 @@
 /*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/10 21:39:45 by Boy Teulings     ###   ########.fr       */
+/*   Updated: 2022/05/12 17:58:22 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include <unistd.h>
 #include "libft/libft.h"
 
-//optimization: strchr for finding % and then - string to write in one go,
-// writing every character seperately is slower
+// optimization: strchr for finding % and then - string to write in one go,
+// -writing every character seperately is slower
 
-//function for when format is c, should be moved to seperate files later
-int	fmt_c(char flag, va_list args)
+// function for when format is c, should be moved to seperate files later
+static int	fmt_c(char flag, va_list args)
 {
 	if (flag == 'c')
 	{
@@ -27,29 +27,44 @@ int	fmt_c(char flag, va_list args)
 	return (0);
 }
 
-/* main function
- TODO: add function in while loop that checks for and returns the character after
- -a found percent sign
-*/
-int	ft_printf(const char *str, ...)
+// function that returns the format specifier after the % sign
+static char	returnfmt(char *str, int strpos)
 {
-	va_list args;
-	int	i;
-
-	i = 0;
-	va_start(args, str);
-	while (str[i])
+	while (str)
 	{
-		if (str[i] == '%')
-		{	
-			fmt_c(str[i + 1], args);
+		if (str[strpos] == '%')
+		{
+			return (str[strpos + 1]);
 			i++;
 		}
 		else
+			i++;
+	}
+}
+
+/* main function
+ * TODO: add function in while loop that checks for and returns the character
+ * -after a found percent sign
+ */
+int	ft_printf(const char *str, ...)
+{
+	va_list	args;
+	int		strpos;
+
+	strpos = 0;
+	va_start(args, str);
+	while (str[strpos])
+	{
+		if (str[strpos] == '%')
 		{
-			write(1, &str[i], 1);
+			returnfmt(str, strpos)
+			strpos++;
 		}
-		i++;
+		else
+		{
+			write(1, &str[strpos], 1);
+		}
+		strpos++;
 	}
 	va_end(args);
 	return (0);
