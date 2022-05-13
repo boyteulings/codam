@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DEPOINTERft_printf.c                               :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/13 16:38:51 by Boy Teulings     ###   ########.fr       */
+/*   Updated: 2022/05/13 16:04:32 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ static char	returnfmt(const char *str, unsigned int *strpos)
 	{
 		if (str[*strpos] == '%')
 		{
-			return (str[*strpos + 1]);
-			*strpos += 1;
+			return (str[(*strpos) + 1]);
+			(*strpos)++;
 		}
 		else
-			*strpos += 1;
+			(*strpos)++;
 	}
 	return (0);
 }
@@ -51,26 +51,28 @@ static char	returnfmt(const char *str, unsigned int *strpos)
 int	ft_printf(const char *str, ...)
 {
 	va_list			args;
-	unsigned int	strpos;
+	unsigned int	*strpos;
 
-	strpos = 0;
+	strpos = malloc(sizeof(unsigned int));
+	if (!strpos)
+		return (1);
 	va_start(args, str);
-	while (str[strpos])
+	while (str[*strpos])
 	{
-		if (str[strpos] == '%')
+		if (str[*strpos] == '%')
 		{
-			if (returnfmt(str, &strpos) == 'c')
+			if (returnfmt(str, strpos) == 'c')
 			{
 				write(1, "#", 1);
-				fmt_c(str[strpos], args);
-				strpos++;
+				fmt_c(str[*strpos], args);
+				(*strpos)++;
 			}
 		}
 		else
 		{
-			write(1, &str[strpos], 1);
+			write(1, &str[*strpos], 1);
 		}
-		strpos++;
+		(*strpos)++;
 	}
 	va_end(args);
 	return (0);
