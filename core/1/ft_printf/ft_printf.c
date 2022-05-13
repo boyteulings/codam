@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DEPOINTERft_printf.c                               :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/13 16:38:51 by Boy Teulings     ###   ########.fr       */
+/*   Updated: 2022/05/13 18:01:01 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ static char	returnfmt(const char *str, unsigned int *strpos)
 		if (str[*strpos] == '%')
 		{
 			return (str[*strpos + 1]);
-			*strpos += 1;
+			(*strpos)++;
 		}
 		else
-			*strpos += 1;
+			(*strpos)++;
 	}
 	return (0);
 }
