@@ -6,29 +6,32 @@
 /*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/13 18:01:01 by Boy Teulings     ###   ########.fr       */
+/*   Updated: 2022/05/17 19:46:18 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "libft/libft.h"
+#include "libft_int.h"
 
 // optimization: strchr for finding % and then - string to write in one go,
 // -writing every character seperately is slower
+// TODO: make custom libft functions that return the amount of bytes written
+// -not sure how to do this yet. How 2 use return value from a nested function?
 
 // function for when format is c, should be moved to seperate files later
 // FIXME: made when I didn't have returnfmt, so it doesn't work anymore
 // TODO: possible fix: put all if statements here and let this handle
-// - the flag if statements
+// -the flag if statements
 static int	fmt_c(char flag, va_list args)
 {
+	int	count;
+
+	count = 0;
 	if (flag == 'c')
-	{
-		ft_putchar_fd(va_arg(args, int), 1);
-	}
-	return (0);
+		count += ft_putchar_fd_int(va_arg(args, int), 1);
+	return (count);
 }
 
 // function that returns the format specifier after the % sign
