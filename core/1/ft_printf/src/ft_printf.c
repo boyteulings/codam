@@ -6,7 +6,7 @@
 /*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/17 19:46:18 by Boy Teulings     ###   ########.fr       */
+/*   Updated: 2022/05/17 20:03:13 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,10 @@ int	ft_printf(const char *str, ...)
 {
 	va_list			args;
 	unsigned int	strpos;
+	int	count;
 
 	strpos = 0;
+	count = 0;
 	va_start(args, str);
 	while (str[strpos])
 	{
@@ -65,7 +67,7 @@ int	ft_printf(const char *str, ...)
 			if (returnfmt(str, &strpos) == 'c')
 			{
 				write(1, "#", 1);
-				fmt_c(str[strpos], args);
+				count += fmt_c(str[strpos], args);
 				strpos++;
 			}
 		}
