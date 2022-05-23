@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/05/23 18:00:39 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/05/23 19:52:25 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_printf(const char *str, ...)
 {
 	va_list			args;
 	unsigned int	strpos;
-	int	count;
+	int				count;
 
 	strpos = 0;
 	count = 0;
@@ -78,9 +78,7 @@ int	ft_printf(const char *str, ...)
 			}
 		}
 		else
-		{
 			write(1, &str[strpos], 1);
-		}
 		strpos++;
 	}
 	va_end(args);

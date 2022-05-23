@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft_int.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 19:16:55 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/17 19:48:04 by Boy Teulings     ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   libft_int.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/05/23 18:49:28 by bteuling      #+#    #+#                 */
+/*   Updated: 2022/05/23 19:13:20 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H_INT
-# define LIBFT_H_INT
+#ifndef LIBFT_INT_H
+# define LIBFT_INT_H
 # include <stdlib.h>
 
 int	ft_putchar_fd_int(char c, int fd);
-int	ft_putstr_fd(char *s, int fd);
-int	ft_putnbr_fd(int n, int fd);
 #endif
