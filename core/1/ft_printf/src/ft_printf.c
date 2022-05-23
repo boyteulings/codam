@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: Boy Teulings <bteuling@student.codam.nl>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 17:46:24 by Boy Teulings      #+#    #+#             */
-/*   Updated: 2022/05/17 20:03:13 by Boy Teulings     ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_printf.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
+/*   Updated: 2022/05/23 18:00:39 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,13 @@ static int	fmt_c(char flag, va_list args)
 	return (count);
 }
 
-// function that returns the format specifier after the % sign
+/**
+ * @brief Function that returns the format specifier after the percent sign
+ * 
+ * @param str pointer to string
+ * @param strpos unsigned int which is the position in string
+ * @return char format specifier
+ */
 static char	returnfmt(const char *str, unsigned int *strpos)
 {
 	while (str[*strpos])
