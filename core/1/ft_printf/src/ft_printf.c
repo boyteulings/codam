@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/05/23 19:52:25 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/05/27 14:57:15 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	fmt_c(char flag, va_list args)
  * 
  * @param str pointer to string
  * @param strpos unsigned int which is the position in string
- * @return char format specifier
+ * @return format specifier as char
  */
 static char	returnfmt(const char *str, unsigned int *strpos)
 {
@@ -89,5 +89,5 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	ft_printf("123456%c78%c9", 'X');
-	return (0);
+return (0);
 }
