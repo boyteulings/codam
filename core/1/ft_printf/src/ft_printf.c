@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/05/30 17:17:26 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/05/30 19:41:13 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@
  */
 // TODO: make custom libft functions that return the amount of bytes written
 
-static int	iflist(char flag, va_list args)
+static int	iflist(char fmt, va_list args)
 {
-	if (flag == 'c')
+	if (fmt == 'c')
 		return (ft_putchar_fd_int(va_arg(args, int), 1));
-	if (flag == '%')
+	if (fmt == 's')
+		return (ft_putstr_fd_int(va_arg(args, int), 1));
+	if (fmt == '%')
 		return (ft_putchar_fd_int('%', 1));
 	return (0);
 }
