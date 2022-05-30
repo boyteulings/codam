@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/05/27 14:57:15 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/05/30 17:17:26 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,21 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft_int.h"
-
-// optimization: strchr for finding % and then - string to write in one go,
-// -writing every character seperately is slower
+/*
+ optimization: store everything to be written in a string,
+ and then write that at the end of main function.
+ also allows for easier handling of errors because the whole string
+ -is checked for validity before writing, instead of writing as you go
+ */
 // TODO: make custom libft functions that return the amount of bytes written
-// -not sure how to do this yet. How 2 use return value from a nested function?
 
-// function for when format is c, should be moved to seperate files later
-// FIXME: made when I didn't have returnfmt, so it doesn't work anymore
-// TODO: possible fix: put all if statements here and let this handle
-// -the flag if statements
-static int	fmt_c(char flag, va_list args)
+static int	iflist(char flag, va_list args)
 {
-	int	count;
-
-	count = 0;
 	if (flag == 'c')
-		count += ft_putchar_fd_int(va_arg(args, int), 1);
-	return (count);
+		return (ft_putchar_fd_int(va_arg(args, int), 1));
+	if (flag == '%')
+		return (ft_putchar_fd_int('%', 1));
+	return (0);
 }
 
 /**
@@ -41,6 +38,8 @@ static int	fmt_c(char flag, va_list args)
  * @param strpos unsigned int which is the position in string
  * @return format specifier as char
  */
+
+/*
 static char	returnfmt(const char *str, unsigned int *strpos)
 {
 	while (str[*strpos])
@@ -55,6 +54,7 @@ static char	returnfmt(const char *str, unsigned int *strpos)
 	}
 	return (0);
 }
+*/
 
 // main function
 int	ft_printf(const char *str, ...)
@@ -70,24 +70,23 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[strpos] == '%')
 		{
-			if (returnfmt(str, &strpos) == 'c')
-			{
-				write(1, "#", 1);
-				count += fmt_c(str[strpos], args);
-				strpos++;
-			}
+			count += iflist(str[strpos + 1], args);
+			strpos++;
 		}
 		else
-			write(1, &str[strpos], 1);
+			count += ft_putchar_fd_int(str[strpos], 1);
 		strpos++;
 	}
 	va_end(args);
-	return (0);
+	return (count);
 }
 
 // REMOVE BEFORE TURN-IN
+#include <stdio.h>
+
 int	main(void)
 {
-	ft_printf("123456%c78%c9", 'X');
-return (0);
+	printf("\ncount: %d\n", ft_printf("12%c34%%56%c78%c9", 'a', 'X', 'i'));
+	//printf("%%%");
+	return (0);
 }
