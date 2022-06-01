@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_int.h                                        :+:    :+:            */
+/*   ft_putstr_count.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/05/23 18:49:28 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/01 17:20:28 by bteuling      ########   odam.nl         */
+/*   Created: 2022/05/30 19:27:15 by bteuling      #+#    #+#                 */
+/*   Updated: 2022/06/01 17:24:59 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_INT_H
-# define LIBFT_INT_H
-# include <stdlib.h>
+#include <unistd.h>
 
-int	ft_putchar_count(char c);
-int	ft_putstr_count(char *s);
-#endif
+// outputs string s to file descriptor(fd)
+int	ft_putstr_count(char *s)
+{
+	int	i;
+
+	i = 0;
+	//if (!s)
+	//	return ;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
+}

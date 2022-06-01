@@ -4,8 +4,8 @@ NAME = ft_printf.a
 .PHONY : all clean fclean re
 
 SRC = src/ft_printf.c \
-	src/ft_putchar_fd_int.c \
-	src/ft_putstr_fd_int.c
+	src/ft_putchar_count.c \
+	src/ft_putstr_count.c
 
 OBJ = $(SRC:.c=.o)
 

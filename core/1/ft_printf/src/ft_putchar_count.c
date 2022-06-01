@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr_fd_int.c                                 :+:    :+:            */
+/*   ft_putchar_count.c                                 :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
+/*   By: Boy Teulings <bteuling@student.codam.nl      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/05/30 19:27:15 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/01 17:03:44 by bteuling      ########   odam.nl         */
+/*   Created: 2022/05/17 17:46:56 by Boy Teuling   #+#    #+#                 */
+/*   Updated: 2022/06/01 17:21:58 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <unistd.h>
 
-// outputs string s to file descriptor(fd)
-int	ft_putstr_fd_int(char *s, int fd)
+// outputs char c on file descriptor(fd) and returns int of
+// -characters written
+int	ft_putchar_count(char c)
 {
-	int	i;
-
-	i = 0;
-	//if (!s)
-	//	return ;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
-	return (i);
+	return (write(1, &c, 1));
 }
