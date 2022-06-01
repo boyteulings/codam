@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/30 19:27:15 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/05/30 19:28:06 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/06/01 17:03:44 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_putstr_fd_int(char *s, int fd)
 	int	i;
 
 	i = 0;
-	if (!s)
-		return ;
+	//if (!s)
+	//	return ;
 	while (s[i])
 	{
 		write(fd, &s[i], 1);

@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/05/30 19:41:13 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/06/01 17:05:34 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
  */
 // TODO: make custom libft functions that return the amount of bytes written
 
-static int	iflist(char fmt, va_list args)
+static int	conversions(char fmt, va_list args)
 {
 	if (fmt == 'c')
 		return (ft_putchar_fd_int(va_arg(args, int), 1));
 	if (fmt == 's')
-		return (ft_putstr_fd_int(va_arg(args, int), 1));
+		return (ft_putstr_fd_int(va_arg(args, char*), 1));
 	if (fmt == '%')
 		return (ft_putchar_fd_int('%', 1));
 	return (0);
@@ -72,7 +72,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[strpos] == '%')
 		{
-			count += iflist(str[strpos + 1], args);
+			count += conversions(str[strpos + 1], args);
 			strpos++;
 		}
 		else
@@ -88,7 +88,7 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	printf("\ncount: %d\n", ft_printf("12%c34%%56%c78%c9", 'a', 'X', 'i'));
+	printf("\ncount: %d\n", ft_printf("12%c34%%56%c78%s9", 'a', 'X', "string!"));
 	//printf("%%%");
 	return (0);
 }
