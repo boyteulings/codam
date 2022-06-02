@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/01 17:26:19 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/06/02 13:26:42 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static int	conversions(char fmt, va_list args)
 		return (ft_putchar_count(va_arg(args, int)));
 	if (fmt == 's')
 		return (ft_putstr_count(va_arg(args, char *)));
+	if (fmt == 'd')
+		return (ft_putnbr_count(va_arg(args, int)));
 	if (fmt == '%')
 		return (ft_putchar_count('%'));
 	return (0);
@@ -88,7 +90,7 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	printf("\ncount: %d\n", ft_printf("12%c34%%56%c78%s9", 'a', 'X', "string!"));
+	printf("\ncount: %d\n", ft_printf("xx%cxx%%xx%cxx%sx%d", 'a', 'X', "string!", 15));
 	//printf("%%%");
 	return (0);
 }

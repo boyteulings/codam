@@ -5,7 +5,8 @@ NAME = ft_printf.a
 
 SRC = src/ft_printf.c \
 	src/ft_putchar_count.c \
-	src/ft_putstr_count.c
+	src/ft_putstr_count.c \
+	src/ft_putnbr_count.c
 
 OBJ = $(SRC:.c=.o)
 

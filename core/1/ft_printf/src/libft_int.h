@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:49:28 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/01 17:20:28 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/06/02 13:21:26 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@
 
 int	ft_putchar_count(char c);
 int	ft_putstr_count(char *s);
+int	ft_putnbr_count(int n);
 #endif
