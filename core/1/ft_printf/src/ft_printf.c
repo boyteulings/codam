@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/02 13:26:42 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/06/03 19:49:15 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
  -is checked for validity before writing, instead of writing as you go
  */
 // TODO: make custom libft functions that return the amount of bytes written
+// TODO: make itoa_base and use that with makelower and makeupper
 
 static int	conversions(char fmt, va_list args)
 {
@@ -90,7 +91,7 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	printf("\ncount: %d\n", ft_printf("xx%cxx%%xx%cxx%sx%d", 'a', 'X', "string!", 15));
+	printf("\ncount: %d\n", ft_printf("normal text %c %% %c %s %d", 'C', 'C', "string!", 42));
 	//printf("%%%");
 	return (0);
 }
