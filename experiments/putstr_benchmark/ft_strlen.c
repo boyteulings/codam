@@ -1,13 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa_base.c                                     :+:    :+:            */
+/*   ft_strlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
+/*   By: bteuling <boyteulings@gmail.com>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/03 16:40:56 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/03 19:49:15 by bteuling      ########   odam.nl         */
+/*   Created: 2021/12/14 14:39:51 by bteuling      #+#    #+#                 */
+/*   Updated: 2021/12/15 14:36:25 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 
+// counts and returns length of string *s
+int	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}
