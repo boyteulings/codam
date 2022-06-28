@@ -3,14 +3,13 @@ RM = rm -f
 NAME = ft_printf.a
 .PHONY : all clean fclean re
 
-SRC = src/ft_printf.c \
-	src/ft_putchar_count.c \
-	src/ft_putstr_count.c \
-	src/ft_putnbr_count.c
+SRC = ft_printf.c \
+		libft/libft.a
 
 OBJ = $(SRC:.c=.o)
 
 $(NAME) : $(OBJ)
+	@make -C libft/
 	@ar -rc $(NAME) $(OBJ)
 
 all : $(NAME)

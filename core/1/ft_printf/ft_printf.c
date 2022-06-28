@@ -6,14 +6,15 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/03 19:49:15 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/06/28 15:22:29 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "libft_int.h"
+#include "libft/libft.h"
+
 /*
  optimization: store everything to be written in a string,
  and then write that at the end of main function.
@@ -26,13 +27,13 @@
 static int	conversions(char fmt, va_list args)
 {
 	if (fmt == 'c')
-		return (ft_putchar_count(va_arg(args, int)));
+		return (ft_putchar_fd(va_arg(args, int), 1));
 	if (fmt == 's')
-		return (ft_putstr_count(va_arg(args, char *)));
-	if (fmt == 'd')
-		return (ft_putnbr_count(va_arg(args, int)));
+		return (ft_putstr_fd(va_arg(args, char *), 1));
+	//if (fmt == 'd')
+	//	return (ft_putnbr_fd(va_arg(args, int), 1));
 	if (fmt == '%')
-		return (ft_putchar_count('%'));
+		return (ft_putchar_fd('%', 1));
 	return (0);
 }
 
@@ -79,7 +80,7 @@ int	ft_printf(const char *str, ...)
 			strpos++;
 		}
 		else
-			count += ft_putchar_count(str[strpos]);
+			count += ft_putchar_fd(str[strpos], 1);
 		strpos++;
 	}
 	va_end(args);
