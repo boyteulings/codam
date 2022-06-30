@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/30 18:09:25 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/06/30 18:45:14 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	conversions(char fmt, va_list args)
 {
 	const char	*base_ten = "0123456789";
 	const char	*base_xl = "0123456789abcdef";
+	const char	*base_xu = "0123456789ABCDEF";
 
 	if (fmt == 'c')
 		return (ft_putchar_fd(va_arg(args, int), 1));
@@ -36,6 +37,8 @@ static int	conversions(char fmt, va_list args)
 		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 10, base_ten), 1));
 	if (fmt == 'x')
 		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 16, base_xl), 1));
+	if (fmt == 'X')
+		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 16, base_xu), 1));
 	if (fmt == '%')
 		return (ft_putchar_fd('%', 1));
 	return (0);
@@ -95,7 +98,7 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	// REMOVE MAIN BEFORE TURN-IN
-	ft_printf("\ncount: %d\n", ft_printf("normal text %c %% %s %d %x", 'C', "string!", 42, 500000));
+	ft_printf("\ncount: %d\n", ft_printf("normal text %c %% %s %d %x %X", 'C', "string!", 42, 1194684, 1194684));
 	//printf("%%%");
 	return (0);
 }
