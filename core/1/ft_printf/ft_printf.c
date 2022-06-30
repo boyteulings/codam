@@ -6,13 +6,12 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/28 15:22:29 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/06/30 15:53:52 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdlib.h>
 #include "libft/libft.h"
 
 /*
@@ -26,12 +25,15 @@
 
 static int	conversions(char fmt, va_list args)
 {
+	char	*base_ten;
+
+	base_ten = "0123456789";
 	if (fmt == 'c')
 		return (ft_putchar_fd(va_arg(args, int), 1));
 	if (fmt == 's')
 		return (ft_putstr_fd(va_arg(args, char *), 1));
-	//if (fmt == 'd')
-	//	return (ft_putnbr_fd(va_arg(args, int), 1));
+	if (fmt == 'd' || fmt == 'i')
+		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 10, base_ten), 1));
 	if (fmt == '%')
 		return (ft_putchar_fd('%', 1));
 	return (0);
@@ -87,12 +89,10 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-// REMOVE BEFORE TURN-IN
-#include <stdio.h>
-
 int	main(void)
 {
-	printf("\ncount: %d\n", ft_printf("normal text %c %% %c %s %d", 'C', 'C', "string!", 42));
+	// REMOVE MAIN BEFORE TURN-IN
+	ft_printf("\ncount: %d\n", ft_printf("normal text %c %% %s %d", 'C', "string!", 42));
 	//printf("%%%");
 	return (0);
 }
