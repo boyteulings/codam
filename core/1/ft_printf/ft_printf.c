@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/06/30 18:45:14 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/07/14 16:03:23 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
  also allows for easier handling of errors because the whole string
  -is checked for validity before writing, instead of writing as you go
  */
-// TODO: make custom libft functions that return the amount of bytes written
-// TODO: make itoa_base and use that with makelower and makeupper
 
 static int	conversions(char fmt, va_list args)
 {
@@ -35,6 +33,8 @@ static int	conversions(char fmt, va_list args)
 		return (ft_putstr_fd(va_arg(args, char *), 1));
 	if (fmt == 'd' || fmt == 'i')
 		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 10, base_ten), 1));
+	if (fmt == 'u')
+		return (ft_putstr_fd(ft_utoa_base(va_arg(args, int), 10, base_ten), 1));
 	if (fmt == 'x')
 		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 16, base_xl), 1));
 	if (fmt == 'X')
@@ -98,7 +98,7 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	// REMOVE MAIN BEFORE TURN-IN
-	ft_printf("\ncount: %d\n", ft_printf("normal text %c %% %s %d %x %X", 'C', "string!", 42, 1194684, 1194684));
+	ft_printf("\ncount: %d\n", ft_printf("normal text %c %% %s %d %u %x %X", 'C', "string!", 42, 4294967295, 1194684, 1194684));
 	//printf("%%%");
 	return (0);
 }
