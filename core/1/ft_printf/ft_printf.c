@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/07/29 16:55:49 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/08/04 16:02:36 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ static int	conversions(char fmt, va_list args)
 	if (fmt == 'd' || fmt == 'i')
 		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 10, base_ten), 1));
 	if (fmt == 'u')
-		return (ft_putstr_fd(ft_utoa_base(va_arg(args, unsigned int), 10, base_ten), 1));
+		return (ft_putstr_fd(ft_utoa_base(va_arg(args, \
+		unsigned int), 10, base_ten), 1));
 	if (fmt == 'x')
 		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 16, base_xl), 1));
 	if (fmt == 'X')
