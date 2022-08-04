@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/08/04 16:02:36 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/08/04 16:52:21 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static int	conversions(char fmt, va_list args)
 		return (ft_putchar_fd(va_arg(args, int), 1));
 	if (fmt == 's')
 		return (ft_putstr_fd(va_arg(args, char *), 1));
+	if (fmt == 'p')
+		return (ft_putstr_fd(ft_utoa_base(va_arg(args, unsigned int), 16, base_xu), 1));
 	if (fmt == 'd' || fmt == 'i')
 		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 10, base_ten), 1));
 	if (fmt == 'u')
@@ -96,10 +98,17 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
+/*
+#include <stdio.h>
 int	main(void)
 {
 	// REMOVE MAIN BEFORE TURN-IN
-	ft_printf("\ncount: %d\n", ft_printf("normal text %c %% %s %d %u %x %X", 'C', "string!", 42, 4294967295, 1194684, 1194684));
+	int i = 100;
+
+	int *ptr = &i;
+	ft_printf("i: %p\n", &i);
+	ft_printf("\ncount: %d\n", ft_printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, 4294967295, 1194684, 1194684));
 	//printf("%%%");
 	return (0);
 }
+*/
