@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/08/04 16:52:21 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/08/04 17:02:24 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-/*
+
 #include <stdio.h>
 int	main(void)
 {
@@ -106,9 +106,10 @@ int	main(void)
 	int i = 100;
 
 	int *ptr = &i;
+	unsigned int u = 4294967295;
 	ft_printf("i: %p\n", &i);
-	ft_printf("\ncount: %d\n", ft_printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, 4294967295, 1194684, 1194684));
+	printf("\ncount: %d\n", ft_printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, u, 1194684, 1194684));
+	printf("\ncount: %d\n", printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, u, 1194684, 1194684));
 	//printf("%%%");
 	return (0);
 }
-*/
