@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/08/04 17:10:55 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/08/05 16:34:41 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	conversions(char fmt, va_list args)
 	if (fmt == 's')
 		return (ft_putstr_fd(va_arg(args, char *), 1));
 	if (fmt == 'p')
-		return (ft_putstr_fd(ft_utoa_base(va_arg(args, unsigned int), 16, base_xu), 1));
+		return (ft_putstr_fd(ft_utoa_base(va_arg(args, unsigned int), 16, base_xl), 1));
 	if (fmt == 'd' || fmt == 'i')
 		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 10, base_ten), 1));
 	if (fmt == 'u')
@@ -73,6 +73,22 @@ static char	returnfmt(const char *str, unsigned int *strpos)
 */
 
 // main function
+/**
+ * @brief 42 version of libc's printf.
+ * 
+ * @param str string to write
+ * @param ... variable amount of arguments, supports the following:
+ * @param c prints a single character
+ * @param s prints a string
+ * @param p prints a void pointer's address
+ * @param d prints a decimal number
+ * @param i prints an integer in base 10
+ * @param u prints an unsigned decimal
+ * @param x prints a hexadecimal number
+ * @param X prints a hexadecimal number in uppercase
+ * @param % prints a percent sign
+ * @return int – amount of bytes written
+ */
 int	ft_printf(const char *str, ...)
 {
 	va_list			args;
