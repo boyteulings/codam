@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/08/11 16:56:14 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/08/11 17:20:15 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,31 +47,6 @@ static int	conversions(char fmt, va_list args)
 		return (ft_putchar_fd('%', 1));
 	return (0);
 }
-
-/**
- * @brief Function that returns the format specifier after the percent sign
- * 
- * @param str pointer to string
- * @param strpos unsigned int which is the position in string
- * @return format specifier as char
- */
-
-/*
-static char	returnfmt(const char *str, unsigned int *strpos)
-{
-	while (str[*strpos])
-	{
-		if (str[*strpos] == '%')
-		{
-			return (str[*strpos + 1]);
-			(*strpos)++;
-		}
-		else
-			(*strpos)++;
-	}
-	return (0);
-}
-*/
 
 // main function
 /**
