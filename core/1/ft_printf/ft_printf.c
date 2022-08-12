@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/08/11 17:20:15 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/08/12 16:11:43 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,11 @@ int	main(void)
 
 	int *ptr = &i;
 	unsigned int u = 4294967295;
-	ft_printf("i: %p\n", &i);
+	ft_printf("\ni: %p\n", &i);
 	printf("\nFTcount: %d\n\n", ft_printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, u, 1194684, 1194684));
 	printf("\ncount: %d\n", printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, u, 1194684, 1194684));
-	//printf("%%%");
+	ft_printf("\nMore tests:\n");
+	ft_printf(" [%s] [%s] [%s] [%s] [%s] ", " <> ", "", "4", " ", "> ");
+	ft_printf("\n %d %d", 2147483647, -2147483648);
 	return (0);
 }
