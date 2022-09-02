@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/09/01 16:36:55 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/09/02 15:08:29 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ static int	conversions(char fmt, va_list args)
 	return (0);
 }
 
-// main function
 /**
  * @brief 42 version of libc's printf.
  * 
