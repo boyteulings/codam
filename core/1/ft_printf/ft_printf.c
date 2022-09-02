@@ -6,20 +6,13 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/09/02 15:08:29 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/09/02 15:45:13 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
 #include "libft/libft.h"
-
-/*
- optimization: store everything to be written in a string,
- and then write that at the end of main function.
- also allows for easier handling of errors because the whole string
- -is checked for validity before writing, instead of writing as you go
- */
 
 static int	conversions(char fmt, va_list args)
 {
