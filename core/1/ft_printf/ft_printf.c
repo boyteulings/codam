@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/09/02 15:45:13 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/09/13 16:56:31 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,23 +80,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (count);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	// REMOVE MAIN BEFORE TURN-IN
-	int i = 100;
-
-	int *ptr = &i;
-	unsigned int u = 4294967295;
-	ft_printf("\ni: %p\n", &i);
-	ft_printf("\nMy version of printf:\n");
-	printf("\nFTcount: %d\n\n", ft_printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, u, 1194684, 1194684));
-	ft_printf("\nglibc printf:\n");
-	printf("\ncount: %d\n", printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, u, 1194684, 1194684));
-	ft_printf("\nMore tests:\n");
-	ft_printf(" [%s] [%s] [%s] [%s] ", " <> ", "", " ", "> ");
-	ft_printf("\n %d %d", 2147483647, -2147483648);
-	return (0);
 }
