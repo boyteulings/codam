@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_printf.c                                        :+:    :+:            */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/09/15 15:46:42 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/09/16 15:10:32 by Boy Teulings     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
 #include "libft/libft.h"
-
 
 //FIXME: null pointer in %s should print (null) instead of segfaulting
 //FIXME: free memory leaks in (nearly?) all functions
