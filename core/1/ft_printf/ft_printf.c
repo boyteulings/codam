@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/09/13 16:56:31 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/09/15 15:46:42 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include <unistd.h>
 #include "libft/libft.h"
 
+
+//FIXME: null pointer in %s should print (null) instead of segfaulting
+//FIXME: free memory leaks in (nearly?) all functions
+//FIXME: hex should be treated as unsigned int
 static int	conversions(char fmt, va_list args)
 {
 	const char	*base_ten = "0123456789";
