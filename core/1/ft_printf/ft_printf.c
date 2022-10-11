@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/10/10 16:31:36 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/10/11 15:15:49 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "libft/libft.h"
 
-// #1: FIXME: hex should be treated as unsigned int
+// #1: FIXED!: hex should be treated as unsigned int
 // #2: FIXME: null pointer in %s should print (null) instead of segfaulting
 // #3: FIXME: free memory leaks in (nearly?) all functions
 static int	conversions(char fmt, va_list args)
@@ -36,9 +36,11 @@ static int	conversions(char fmt, va_list args)
 		return (ft_putstr_fd(ft_utoa_base(va_arg(args, \
 		unsigned int), 10, base_ten), 1));
 	if (fmt == 'x')
-		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 16, base_xl), 1));
+		return (ft_putstr_fd(ft_utoa_base(va_arg(args, \
+		unsigned int), 16, base_xl), 1));
 	if (fmt == 'X')
-		return (ft_putstr_fd(ft_itoa_base(va_arg(args, int), 16, base_xu), 1));
+		return (ft_putstr_fd(ft_utoa_base(va_arg(args, \
+		unsigned int), 16, base_xu), 1));
 	if (fmt == '%')
 		return (ft_putchar_fd('%', 1));
 	return (0);
@@ -83,4 +85,24 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (count);
+}
+
+// copy this in the ft_printf.c file for testing
+#include <stdio.h>
+int	main(void)
+{
+	int	i = 100;
+	unsigned int	x = 4294967295;
+	int	*ptr = &i;
+	unsigned int u = 4294967295;
+
+	ft_printf("\ni: %p\n", &i);
+	ft_printf("\nMy version of printf:\n");
+	printf("\nFTcount: %d\n\n", ft_printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, u, x, x));
+	ft_printf("\nglibc printf:\n");
+	printf("\ncount: %d\n", printf("normal text %c %% %s %p %d %u %x %X", 'C', "string!", ptr, 42, u, x, x));
+	ft_printf("\nMore tests:\n");
+	ft_printf("[%s]-[%s]-[%s]-[%s]", " <> ", "", " ", "> ");
+	ft_printf("\nmax and min int: %d %d", 2147483647, -2147483648);
+	return (0);
 }
