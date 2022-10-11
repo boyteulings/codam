@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/10/11 15:17:40 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/10/11 16:41:54 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "libft/libft.h"
 
 // #1: FIXED!: hex should be treated as unsigned int
-// #2: FIXME: null pointer in %s should print (null) instead of segfaulting
+// #2: FIXED?: null pointer in %s should print (null) instead of segfaulting
 // #3: FIXME: free memory leaks in (nearly?) all functions
 static int	conversions(char fmt, va_list args)
 {
