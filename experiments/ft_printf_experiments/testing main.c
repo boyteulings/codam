@@ -5,7 +5,7 @@ int	main(void)
 	int	i = 100;
 	unsigned int	x = 4294967295;
 	int	*ptr = &i;
-	unsigned int u = 4294967295;
+	unsigned int 	u = 4294967295;
 
 	ft_printf("\ni: %p\n", &i);
 	ft_printf("\nMy version of printf:\n");

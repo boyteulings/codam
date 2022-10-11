@@ -6,7 +6,7 @@
 /*   By: bteuling <bteuling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/23 18:00:39 by bteuling      #+#    #+#                 */
-/*   Updated: 2022/10/11 15:15:49 by bteuling      ########   odam.nl         */
+/*   Updated: 2022/10/11 15:17:40 by bteuling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int	main(void)
 	int	i = 100;
 	unsigned int	x = 4294967295;
 	int	*ptr = &i;
-	unsigned int u = 4294967295;
+	unsigned int 	u = 4294967295;
 
 	ft_printf("\ni: %p\n", &i);
 	ft_printf("\nMy version of printf:\n");
